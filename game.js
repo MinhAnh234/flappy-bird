@@ -52,7 +52,7 @@ var game = function () {
             else {
                 var audio = new Audio('../hit.mp3');
                 audio.play();
-
+                
             }
            
         }
@@ -93,4 +93,4 @@ var game = function () {
 
 }
 var g = new game();
-
+g.init();
