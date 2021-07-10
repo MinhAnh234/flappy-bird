@@ -25,7 +25,8 @@ var pipe = function(game) {
     }
 
     this.update= function() {
-      
+        this.X1-=5;
+        this.X2-=5;
         if(this.X1<0) {
             
             this.randomHeightMath[0]=this.random();

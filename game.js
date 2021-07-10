@@ -61,7 +61,19 @@ window.onload=function() {
                 if(self.bird.Y<self.pipe.randomHeightMath[1] && self.bird.Y>150 ) {
                     self.score+=1;
                     var audio = new Audio('../point.mp3');
-                    audio.play();
+                    var playPromise = audio.play();
+
+                    // In browsers that don’t yet support this functionality,
+                    // playPromise won’t be defined.
+                    if (playPromise !== undefined) {
+                      playPromise.then(function() {
+                        // Automatic playback started!
+                      }).catch(function(error) {
+                        // Automatic playback failed.
+                        // Show a UI element to let the user manually start playback.
+                      });
+                    }
+                    
                 }
                 else {
                     var audio = new Audio('../hit.mp3');
@@ -95,5 +107,6 @@ window.onload=function() {
     }
     var g = new game();
     g.init();
+   
     
 }
