@@ -67,10 +67,9 @@ window.onload=function() {
                     // playPromise won’t be defined.
                     if (playPromise !== undefined) {
                       playPromise.then(function() {
-                        // Automatic playback started!
+                       console.log(5);
                       }).catch(function(error) {
-                        // Automatic playback failed.
-                        // Show a UI element to let the user manually start playback.
+                        console.log(error);
                       });
                     }
                     
